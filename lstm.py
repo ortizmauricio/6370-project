@@ -20,7 +20,7 @@ training_set_scaled = sc.fit_transform(training_set)
 
 X_train = []
 y_train = []
-for i in range(60, 2035):
+for i in range(60, 5034):
     X_train.append(training_set_scaled[i-60:i, 0])
     y_train.append(training_set_scaled[i, 0])
 X_train, y_train = np.array(X_train), np.array(y_train)
@@ -60,7 +60,7 @@ inputs = dataset_total[len(dataset_total) - len(dataset_test) - 60:].values
 inputs = inputs.reshape(-1,1)
 inputs = sc.transform(inputs)
 X_test = []
-for i in range(60, 76):
+for i in range(60, 815):
     X_test.append(inputs[i-60:i, 0])
 X_test = np.array(X_test)
 X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
